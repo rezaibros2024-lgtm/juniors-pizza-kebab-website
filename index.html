@@ -164,12 +164,13 @@
   .kb .sv{ display:inline-block; margin-top:6px; font-size:.72rem; font-weight:700; letter-spacing:.03em; color: var(--veg); }
   .hsp{ background: var(--paper-raised); border:1px solid var(--line); border-radius:16px; padding:18px; }
   .hsp h3{ font-size:1.05rem; margin:0; } .hsp p{ font-size:.85rem; color: var(--ink-soft); margin:2px 0 14px; }
-  .hspp{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .hspp{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
   .hspp figure{ margin:0; }
   .hspp img{ display:block; width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; border:1px solid var(--line); cursor:zoom-in; }
-  .hspp figcaption{ display:flex; justify-content:space-between; align-items:baseline; padding:8px 2px 0; font-weight:600; font-size:.9rem; }
+  .hspp figcaption{ display:flex; justify-content:space-between; align-items:baseline; padding:10px 2px 0; font-weight:600; font-size:1.05rem; }
+  .hspp figure:last-child img{ object-fit:cover; }
   .hspp figcaption b{ font-family:'Anton',sans-serif; font-weight:400; font-size:1.2rem; color: var(--tomato); }
-  @media (max-width: 700px){ .hspp{ grid-template-columns:1fr 1fr; } }
+  @media (max-width: 520px){ .hspp{ grid-template-columns:1fr; } }
   #lb{ position:fixed; inset:0; background: rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; z-index:1000; padding:16px; cursor: zoom-out; }
   #lb.open{ display:flex; }
   #lb img{ max-width:100%; max-height:100%; border-radius:12px; background:#fff; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
