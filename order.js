@@ -10,6 +10,7 @@
   var EMAIL = 'admin@juniorspizzakebab.com.au';
   var OFFER_END = new Date('2026-11-09T00:00:00+11:00');
   var FB_URL = 'https://m.me/61594126336340';
+  var DD_URL = 'https://www.doordash.com/store/junior%27s-pizza-cheltenham-30840739/41673549/';
   var STORE_KEY = 'jpk-order-v1';
 
   var EXTRAS = {
@@ -182,6 +183,7 @@
     '.oa-total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:800;padding:14px 0 4px}',
     '.oa-note{margin:8px 0 0;padding:10px 12px;border-radius:10px;background:rgba(201,138,44,.16);font-size:.88rem}',
     '.oa-fine{font-size:.82rem;color:var(--ink-soft);margin:10px 0 0}',
+    '.oa-fine a{color:var(--tomato);font-weight:700}',
     '.oa-ok{color:var(--veg);font-weight:700;font-size:.9rem;min-height:1.2em;margin-top:8px}',
     '.oa-bar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--head-bg);display:flex;justify-content:center}',
     '.oa-bar[hidden]{display:none}',
@@ -402,6 +404,7 @@
       '<label class="oa-fld">Phone number<input type="tel" id="oa-phone" autocomplete="tel" maxlength="20"></label>' +
       '<label class="oa-fld">Pickup time (optional)<input type="text" id="oa-when" maxlength="40" placeholder="e.g. 6:30pm, or as soon as possible"></label>';
     h += '<p class="oa-fine">This is a pickup order and you pay in store. It is only confirmed once we answer your call or reply to your email or message.</p>';
+    h += '<p class="oa-fine">Want it delivered? <a href="' + DD_URL + '" target="_blank" rel="noopener">Order on DoorDash</a> instead (delivery prices and fees are different).</p>';
     h += '<div class="oa-err" role="alert" id="oa-cerr"></div><div class="oa-ok" role="status" id="oa-ok"></div>';
     h += '<div class="oa-actions"><a class="oa-btn pri" id="oa-call" href="tel:' + PHONE_TEL + '">Call ' + PHONE_SHOW + ' to order</a>' +
       '<button type="button" class="oa-btn" id="oa-mail">Email order</button>' +
