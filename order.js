@@ -11,6 +11,7 @@
   var OFFER_END = new Date('2026-11-09T00:00:00+11:00');
   var FB_URL = 'https://m.me/61594126336340';
   var DD_URL = 'https://www.doordash.com/store/junior%27s-pizza-cheltenham-30840739/41673549/';
+  var WA_NUM = '61470483325';
   var STORE_KEY = 'jpk-order-v1';
 
   var EXTRAS = {
@@ -409,6 +410,7 @@
     h += '<div class="oa-actions"><a class="oa-btn pri" id="oa-call" href="tel:' + PHONE_TEL + '">Call ' + PHONE_SHOW + ' to order</a>' +
       '<button type="button" class="oa-btn" id="oa-mail">Email order</button>' +
       '<button type="button" class="oa-btn" id="oa-copy">Copy order</button>' +
+      '<button type="button" class="oa-btn" id="oa-wa">Order on WhatsApp</button>' +
       '<button type="button" class="oa-btn" id="oa-fb">Message us on Facebook</button></div>';
     h += '<div class="oa-actions" style="margin-top:8px"><button type="button" class="oa-link" id="oa-clear">Clear order</button><button type="button" class="oa-link" id="oa-more">Keep browsing</button></div></div>';
     cartDlg.innerHTML = h;
@@ -433,6 +435,10 @@
       if (!detailsOk()) { return; }
       var subj = 'Pickup order from ' + $('#oa-name', cartDlg).value.trim();
       window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(summary());
+    });
+    $('#oa-wa', cartDlg).addEventListener('click', function () {
+      if (!detailsOk()) { return; }
+      window.open('https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(summary()), '_blank', 'noopener');
     });
     $('#oa-fb', cartDlg).addEventListener('click', function () {
       if (!detailsOk()) { return; }
