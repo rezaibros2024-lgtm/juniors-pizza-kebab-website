@@ -14,6 +14,7 @@
   var EXTRAS = {
     gf:      { n: 'Gluten-free base (large 13″ only)', p: 4, max: 1 },
     cheese:  { n: 'Extra cheese', p: 1.5, max: 3 },
+    mozz:    { n: 'Extra mozzarella cheese', p: 1.5, max: 3 },
     meat:    { n: 'Extra meat (per topping)', p: 1.99, max: 5 },
     prawn:   { n: 'Extra prawns', p: 2.99, max: 5 },
     vmush:   { n: 'Extra mushroom', p: 1, max: 3 },
@@ -28,7 +29,7 @@
     hcheese: { n: 'HSP extra cheese', p: 2.5, max: 3 }
   };
   var SETS = {
-    pizza: ['gf', 'cheese', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
+    pizza: ['gf', 'mozz', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     kebab: ['kmeat', 'cheese', 'veg', 'sauce'],
     hsp:   ['hcheese', 'kmeat', 'sauce'],
     plain: []
