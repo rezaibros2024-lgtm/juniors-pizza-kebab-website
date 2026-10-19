@@ -9,6 +9,7 @@
   var PHONE_SHOW = '(03) 9553 4025';
   var EMAIL = 'admin@juniorspizzakebab.com.au';
   var OFFER_END = new Date('2026-11-09T00:00:00+11:00');
+  var FB_URL = 'https://m.me/61594126336340';
   var STORE_KEY = 'jpk-order-v1';
 
   var EXTRAS = {
@@ -400,11 +401,12 @@
     h += '<label class="oa-fld">Your name<input type="text" id="oa-name" autocomplete="name" maxlength="60"></label>' +
       '<label class="oa-fld">Phone number<input type="tel" id="oa-phone" autocomplete="tel" maxlength="20"></label>' +
       '<label class="oa-fld">Pickup time (optional)<input type="text" id="oa-when" maxlength="40" placeholder="e.g. 6:30pm, or as soon as possible"></label>';
-    h += '<p class="oa-fine">This is a pickup order and you pay in store. It is only confirmed once we answer your call or reply to your email.</p>';
+    h += '<p class="oa-fine">This is a pickup order and you pay in store. It is only confirmed once we answer your call or reply to your email or message.</p>';
     h += '<div class="oa-err" role="alert" id="oa-cerr"></div><div class="oa-ok" role="status" id="oa-ok"></div>';
     h += '<div class="oa-actions"><a class="oa-btn pri" id="oa-call" href="tel:' + PHONE_TEL + '">Call ' + PHONE_SHOW + ' to order</a>' +
       '<button type="button" class="oa-btn" id="oa-mail">Email order</button>' +
-      '<button type="button" class="oa-btn" id="oa-copy">Copy order</button></div>';
+      '<button type="button" class="oa-btn" id="oa-copy">Copy order</button>' +
+      '<button type="button" class="oa-btn" id="oa-fb">Message us on Facebook</button></div>';
     h += '<div class="oa-actions" style="margin-top:8px"><button type="button" class="oa-link" id="oa-clear">Clear order</button><button type="button" class="oa-link" id="oa-more">Keep browsing</button></div></div>';
     cartDlg.innerHTML = h;
     $('#oa-name', cartDlg).value = keep.name;
@@ -428,6 +430,11 @@
       if (!detailsOk()) { return; }
       var subj = 'Pickup order from ' + $('#oa-name', cartDlg).value.trim();
       window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(summary());
+    });
+    $('#oa-fb', cartDlg).addEventListener('click', function () {
+      if (!detailsOk()) { return; }
+      window.open(FB_URL, '_blank', 'noopener');
+      copyText(summary());
     });
     $('#oa-copy', cartDlg).addEventListener('click', function () {
       if (!detailsOk()) { return; }
