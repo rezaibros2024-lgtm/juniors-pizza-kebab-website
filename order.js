@@ -16,13 +16,19 @@
     cheese:  { n: 'Extra cheese', p: 1.5, max: 3 },
     meat:    { n: 'Extra meat (per topping)', p: 1.99, max: 5 },
     prawn:   { n: 'Extra prawns', p: 2.99, max: 5 },
+    vmush:   { n: 'Extra mushroom', p: 1, max: 3 },
+    vcap:    { n: 'Extra capsicum', p: 1, max: 3 },
+    vonion:  { n: 'Extra onion', p: 1, max: 3 },
+    volive:  { n: 'Extra olives', p: 1, max: 3 },
+    vpine:   { n: 'Extra pineapple', p: 1, max: 3 },
+    vtom:    { n: 'Extra tomato', p: 1, max: 3 },
     veg:     { n: 'Extra vegetable topping', p: 1, max: 5 },
     sauce:   { n: 'Extra sauce', p: 1, max: 5, help: 'Garlic, chilli, BBQ or sweet chilli — tell us which in the notes' },
     kmeat:   { n: 'Extra kebab meat', p: 3.5, max: 3 },
     hcheese: { n: 'HSP extra cheese', p: 2.5, max: 3 }
   };
   var SETS = {
-    pizza: ['gf', 'cheese', 'meat', 'prawn', 'veg', 'sauce'],
+    pizza: ['gf', 'cheese', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     kebab: ['kmeat', 'cheese', 'veg', 'sauce'],
     hsp:   ['hcheese', 'kmeat', 'sauce'],
     plain: []
