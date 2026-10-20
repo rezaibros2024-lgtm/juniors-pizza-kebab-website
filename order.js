@@ -34,6 +34,7 @@
   };
   var SETS = {
     pizza: ['gf', 'mozz', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
+    calzone: ['mozz', 'meat', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     kebab: ['kmeat', 'cheese', 'veg', 'sauce'],
     hsp:   ['chips', 'hcheese', 'kmeat', 'sauce'],
     plain: []
@@ -115,6 +116,15 @@
         }, $('.bd', card) || card, false);
       });
     });
+
+    var cz = document.getElementById('calzone');
+    if (cz) {
+      Array.prototype.forEach.call(cz.querySelectorAll('.mcard'), function (card) {
+        register({
+          name: ownText($('h3', card)), desc: txt($('p', card)), type: 'calzone', sizes: [], base: money(txt($('.pl i', card)))
+        }, $('.bd', card) || card, false);
+      });
+    }
 
     [['kebabs', 'kebab', ''], ['hsp', 'hsp', 'HSP '], ['parma', 'plain', ''], ['sides', 'plain', '']].forEach(function (g) {
       var sec = document.getElementById(g[0]);
