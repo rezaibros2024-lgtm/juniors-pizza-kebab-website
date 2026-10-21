@@ -382,7 +382,7 @@
 
   function offerApplies() {
     return new Date() < OFFER_END && cart.some(function (l) {
-      return /^(L|FAM)(\s|$)/.test(l.size);
+      return /^FAM(\s|$)/.test(l.size);
     });
   }
 
@@ -415,7 +415,7 @@
     });
     h += '<div class="oa-total"><span>Total</span><span>' + fmt(total()) + '</span></div>';
     if (offerApplies()) {
-      h += '<p class="oa-note"><strong>Opening offer:</strong> FREE 1.25L drink with any Large or Family pizza. Say “OPEN” when you order (until 8 November 2026, one per order, not combined with other deals).</p>';
+      h += '<p class="oa-note"><strong>Opening offer:</strong> FREE 1.25L drink with any Family pizza. Say “OPEN” when you order (until 8 November 2026, one per order, not combined with other deals).</p>';
     }
     h += '<label class="oa-fld">Your name<input type="text" id="oa-name" autocomplete="name" maxlength="60"></label>' +
       '<label class="oa-fld">Phone number<input type="tel" id="oa-phone" autocomplete="tel" maxlength="20"></label>' +
