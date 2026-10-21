@@ -29,13 +29,15 @@
     veg:     { n: 'Extra vegetable topping', p: 1, max: 5 },
     sauce:   { n: 'Extra sauce', p: 1, max: 5, help: 'Garlic, chilli, BBQ or sweet chilli — tell us which in the notes' },
     kmeat:   { n: 'Extra kebab meat', p: 3.5, max: 3 },
+    wchick:  { n: 'Extra chicken', p: 3.5, max: 3 },
+    wbeef:   { n: 'Extra beef doner', p: 3.5, max: 3 },
     chips:   { n: 'Extra chips', p: 3, max: 3 },
     hcheese: { n: 'HSP extra cheese', p: 2.5, max: 3 }
   };
   var SETS = {
     pizza: ['gf', 'mozz', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     calzone: ['mozz', 'meat', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
-    kebab: ['kmeat', 'cheese', 'veg', 'sauce'],
+    kebab: ['wchick', 'wbeef', 'cheese', 'veg', 'sauce'],
     hsp:   ['chips', 'hcheese', 'kmeat', 'sauce'],
     plain: []
   };
