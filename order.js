@@ -35,7 +35,7 @@
     schilli: { n: 'Chilli sauce', p: 1, max: 3 },
     sbbq:    { n: 'BBQ sauce', p: 1, max: 3 },
     ssweet:  { n: 'Sweet chilli sauce', p: 1, max: 3 },
-    chips:   { n: 'Extra chips', p: 3, max: 3 },
+    chips:   { n: 'Extra chips', p: 1.9, max: 3 },
     hcheese: { n: 'HSP extra cheese', p: 2.5, max: 3 }
   };
   var SETS = {
