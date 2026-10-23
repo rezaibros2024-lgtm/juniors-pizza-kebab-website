@@ -20,6 +20,7 @@
     mozz:    { n: 'Extra mozzarella cheese', p: 1.5, max: 3 },
     meat:    { n: 'Extra meat (per topping)', p: 1.99, max: 5 },
     prawn:   { n: 'Extra prawns', p: 2.99, max: 5 },
+    anchovy: { n: 'Extra anchovies', p: 3.9, max: 5 },
     vmush:   { n: 'Extra mushroom', p: 1, max: 3 },
     vcap:    { n: 'Extra capsicum', p: 1, max: 3 },
     vonion:  { n: 'Extra onion', p: 1, max: 3 },
@@ -39,7 +40,7 @@
     hcheese: { n: 'HSP extra cheese', p: 2.5, max: 3 }
   };
   var SETS = {
-    pizza: ['gf', 'mozz', 'meat', 'prawn', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
+    pizza: ['gf', 'mozz', 'meat', 'prawn', 'anchovy', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     calzone: ['mozz', 'meat', 'vmush', 'vcap', 'vonion', 'volive', 'vpine', 'vtom', 'sauce'],
     kebab: ['wchick', 'wbeef', 'cheese', 'veg', 'sgarlic', 'schilli', 'sbbq', 'ssweet'],
     hsp:   ['chips', 'hcheese', 'kmeat', 'sauce'],
