@@ -221,6 +221,14 @@
   #lb img{ max-width:100%; max-height:100%; border-radius:12px; background:#fff; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
   
   /* ---------- Order CTA ---------- */
+
+  .loyalty{ padding: 48px 20px; }
+  .loyalty .box{ max-width: 760px; margin: 0 auto; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 18px; padding: 28px; display:flex; gap: 28px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .loyalty img{ width: 190px; height: 190px; border-radius: 12px; background:#fff; padding: 8px; flex: 0 0 auto; }
+  .loyalty .txt{ flex: 1 1 280px; text-align:left; }
+  .loyalty h2{ font-family:'Anton', sans-serif; font-weight:400; font-size:1.6rem; margin: 0 0 8px; }
+  .loyalty p{ color: var(--ink-soft); margin: 0 0 16px; line-height:1.55; }
+  @media (max-width:560px){ .loyalty .txt{ text-align:center; } .loyalty .box{ padding: 22px 18px; } }
   .order-cta{ text-align:center; padding: 56px 20px; }
   .order-cta h2{ font-family:'Anton', sans-serif; font-weight:400; font-size:1.6rem; margin: 0 0 10px; }
   .order-cta p{ color: var(--ink-soft); max-width: 460px; margin: 0 auto 22px; }
@@ -243,6 +251,7 @@
       <a class="brand" href="#top"><img src="logo.jpg" alt="Juniors Pizza &amp; Kebab logo">Juniors Pizza &amp; Kebab</a>
       <nav>
         <a href="#menu">Menu</a>
+        <a href="#loyalty">Loyalty card</a>
         <a href="#location">Location</a>
       </nav>
       <a class="call" href="tel:+61395534025">Call to order</a>
@@ -301,6 +310,17 @@
     <section class="msec" id="drinks"><div class="msh"><h2>Drinks</h2></div><div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-end;margin:0 0 18px"><figure style="margin:0;text-align:center;flex:0 1 300px"><div role="img" aria-label="Coke, Coke Zero and Pepsi Max cans" style="width:100%;aspect-ratio:2.2/1;background:#fff url(photos/cans/image.jpg) no-repeat;background-size:190%;background-position:100% 100%;border-radius:12px"></div><figcaption style="margin-top:8px;font-size:.95rem;line-height:1.35">Soft drink cans</figcaption></figure><figure style="margin:0;text-align:center;flex:0 1 160px"><img src="photos/ayran-1l/image.jpg" alt="Ayran" style="display:block;margin:0 auto;height:150px;width:auto;max-width:100%;object-fit:contain;background:#fff;border-radius:12px"><figcaption style="margin-top:8px;font-size:.95rem;line-height:1.35"><b>Ayran</b><br>500ml $4.00 &middot; 1L $7.50</figcaption></figure></div><div class="lns"><div class="ln"><span>Cans, 375ml &mdash; Coke, Coke Zero, Pepsi, Pepsi Max, Fanta, Sunkist, Solo, Mountain Dew, Kirks (Pasito, Creaming Soda, Lemonade, Lemon Squash, Ginger Beer)</span><b>$3.50</b></div><div class="ln"><span>Water, 600ml</span><b>$3.00</b></div><div class="ln"><span>Mountain Dew, 600ml</span><b>$5.50</b></div><div class="ln"><span>Bottle, 1.25L &mdash; Coke, Sunkist or Kirks Zero Sugar Pasito</span><b>$6.00</b></div><div class="ln"><span>Maximus, 1L &mdash; Blue or Red</span><b>$5.50</b></div><div class="ln"><span>V Energy, 500ml</span><b>$6.00</b></div><div class="ln"><span>Mango Lassi, 300ml</span><b>$4.50</b></div></div></section>
   <p class="allergen-note" style="max-width:760px;margin:28px auto 0;padding:0 16px;text-align:center;font-size:.82rem;font-style:italic;line-height:1.5;color:var(--ink-soft)">We do our best to cater for gluten-free requests, but gluten and other allergens (including nuts) are handled in our kitchen, so traces may be present. We can&rsquo;t guarantee that any of our food is 100% gluten-free. If you have an allergy, please tell us when you order.</p>
   </main>
+
+  <section class="loyalty" id="loyalty">
+    <div class="box">
+      <img src="loyalty-qr.png" alt="QR code to join the Juniors Pizza &amp; Kebab loyalty card" width="190" height="190" loading="lazy" decoding="async">
+      <div class="txt">
+        <h2>Join our loyalty card</h2>
+        <p>Scan the QR code, or tap the button, to get your free digital card. No app needed. Earn one stamp for every $20 you spend, and collect 10 stamps for a free kebab wrap or small traditional pizza.</p>
+        <a class="btn btn-primary" href="https://juniors-rewards.pages.dev/juniors/join/custom-1795522936537" rel="noopener">Get my loyalty card</a>
+      </div>
+    </div>
+  </section>
 
   <section class="order-cta">
     <h2>Ready to order?</h2>
