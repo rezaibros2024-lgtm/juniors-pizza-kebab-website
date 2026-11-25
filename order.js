@@ -11,6 +11,9 @@
   var FB_URL = 'https://m.me/61594126336340';
   var DD_URL = 'https://www.doordash.com/store/junior%27s-pizza-cheltenham-30840739/41673549/';
   var WA_NUM = '61470483325';
+  /* Paste the shop's online ordering link here (e.g. DoorDash Online Ordering) to turn on
+     "Order & pay online" everywhere on the site. Leave empty to keep call/message ordering. */
+  var ONLINE_URL = '';
   var STORE_KEY = 'jpk-order-v1';
 
   var EXTRAS = {
@@ -411,10 +414,15 @@
     h += '<label class="oa-fld">Your name<input type="text" id="oa-name" autocomplete="name" maxlength="60"></label>' +
       '<label class="oa-fld">Phone number<input type="tel" id="oa-phone" autocomplete="tel" maxlength="20"></label>' +
       '<label class="oa-fld">Pickup time (optional)<input type="text" id="oa-when" maxlength="40" placeholder="e.g. 6:30pm, or as soon as possible"></label>';
-    h += '<p class="oa-fine">This is a pickup order and you pay in store. It is only confirmed once we answer your call or reply to your email or message.</p>';
+    h += '<p class="oa-fine">' + (ONLINE_URL ? 'Ordering by call or message instead of online? ' : '') +
+      'This is a pickup order and you pay in store. It is only confirmed once we answer your call or reply to your email or message.</p>';
     h += '<p class="oa-fine">Want it delivered? <a href="' + DD_URL + '" target="_blank" rel="noopener">Order on DoorDash</a> instead (delivery prices and fees are different).</p>';
     h += '<div class="oa-err" role="alert" id="oa-cerr"></div><div class="oa-ok" role="status" id="oa-ok"></div>';
-    h += '<div class="oa-actions"><a class="oa-btn pri" id="oa-call" href="tel:' + PHONE_TEL + '">Call ' + PHONE_SHOW + ' to order</a>' +
+    if (ONLINE_URL) {
+      h += '<div class="oa-actions"><a class="oa-btn pri" href="' + esc(ONLINE_URL) + '" target="_blank" rel="noopener">Order &amp; pay online — no call needed</a></div>' +
+        '<p class="oa-fine">Online ordering opens in a new tab. Keep this list open as your checklist. Prefer to call or message? Use the buttons below.</p>';
+    }
+    h += '<div class="oa-actions"><a class="oa-btn' + (ONLINE_URL ? '' : ' pri') + '" id="oa-call" href="tel:' + PHONE_TEL + '">Call ' + PHONE_SHOW + ' to order</a>' +
       '<button type="button" class="oa-btn" id="oa-mail">Email order</button>' +
       '<button type="button" class="oa-btn" id="oa-copy">Copy order</button>' +
       '<button type="button" class="oa-btn" id="oa-wa">Order on WhatsApp</button>' +
@@ -496,7 +504,18 @@
   }
 
   /* ---------- go ---------- */
+  function wireOnlineLinks() {
+    if (!ONLINE_URL) { return; }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-order-online]'), function (a) {
+      a.href = ONLINE_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = a.getAttribute('data-order-online') || 'Order online';
+    });
+  }
+
   function init() {
+    wireOnlineLinks();
     if (typeof HTMLDialogElement === 'undefined') { return; } // very old browsers: menu stays view-only
     readMenu();
     build();
